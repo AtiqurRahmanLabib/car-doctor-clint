@@ -7,8 +7,8 @@ const Navbar = () => {
     return (
         <div>
 
-            <div className='w-[1140px] h-[86.78px] mx-auto mt-10 flex items-center gap-5 justify-between'>
-                <img src={logo} alt="" srcset="" />
+            <div className='w-[1140px] h-[86.78px] mx-auto mt-5 flex items-center gap-5 justify-between'>
+                <img src={logo} alt="" />
 
                 <div className='gap-10 flex items-center'>
                     <NavLink
