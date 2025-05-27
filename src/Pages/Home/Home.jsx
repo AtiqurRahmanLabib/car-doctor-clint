@@ -69,10 +69,19 @@ const Home = () => {
                 }
             </div>
 
+
             <div className='w-[1140px] h-[98px] mx-auto mt-10 text-center'>
             <button className='rounded-[5px] w-[170px] h-[56px] border border-[#FF3811] text-[#FF3811] font-semibold font-inter text-[18px]'>More Services</button>
             </div>
+                <div className='w-[1140px] h-[250px] mx-auto mt-10 bg-[#151515] rounded-[10px] mb-10'>
 
+                </div>
+
+                <div className='mx-auto text-center'>
+                    <h1 className='font-inter font-bold text-[20px] text-[#FF3811]'>Popular Products</h1>
+                    <p className='text-[#151515] text-[45px] font-bold font-inter'>Browse Our Products</p>
+                    <p className='font-inter text-[16px] text-[#737373] mt-2'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
+                </div>
 
 
 
