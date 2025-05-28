@@ -3,6 +3,9 @@ import Banner from '../../Components/Banner/Banner';
 import Person from '../../assets/images/about_us/person.jpg'
 import parts from '../../assets/images/about_us/parts.jpg'
 import Services from '../../Components/Services/Services';
+import Navbar from '../Shared/Navbar/Navbar';
+import Footer from '../Shared/Footer/Footer';
+
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -15,6 +18,7 @@ const Home = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             {/* Banner Section  starting point */}
 
             <section className="banner">
@@ -86,6 +90,7 @@ const Home = () => {
 
 
 
+                <Footer></Footer>
         </div>
 
     );
