@@ -1,7 +1,10 @@
 import React from 'react';
 import loginImg from '../../assets/images/login/login.svg';
 import Navbar from '../Shared/Navbar/Navbar';
-import Link from 'daisyui/components/link';
+import { FaFacebook } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div>
@@ -15,20 +18,22 @@ const Login = () => {
                     <h1 className='text-[#444444] text-[40px] font-semibold font-inter text-center pt-15'>Login</h1>
 
                     <form className=''>
-                        <div className='grid mx-auto mt-10 gap-2 w-[468px]'>
-                        <label className='text-[#444444] text-[20px] font-semibold font-inter'>Email</label>
-                        <input type="email" className='w-[461px] h-[60px] rounded-[10px] border border-[#E8E8E8] p-5' placeholder='Your email' required />
+                        <div className='grid mx-auto mt-20 gap-2 w-[468px]'>
+                            <label className='text-[#444444] text-[20px] font-semibold font-inter'>Email</label>
+                            <input type="email" className='w-[461px] h-[60px] rounded-[10px] border border-[#E8E8E8] p-5' placeholder='Your email' required />
                         </div>
                         <div className='grid mx-auto mt-5 gap-2 w-[468px]'>
-                        <label className='text-[#444444] text-[20px] font-semibold font-inter'>passwordl</label>
-                        <input type="Password" className='w-[461px] h-[60px] rounded-[10px] border p-5 border-[#E8E8E8]' placeholder='Your password' required />
-                        <button className='w-[461px] h-[64px] bg-[#FF3811] rounded-[10px] text-[20px] font-semibold text-white font-inter mt-5' type="submit">Sign In</button>
+                            <label className='text-[#444444] text-[20px] font-semibold font-inter'>passwordl</label>
+                            <input type="Password" className='w-[461px] h-[60px] rounded-[10px] border p-5 border-[#E8E8E8]' placeholder='Your password' required />
+                            <button className='w-[461px] h-[64px] bg-[#FF3811] rounded-[10px] text-[20px] font-semibold text-white font-inter mt-5' type="submit">Sign In</button>
                         </div>
-                        <h1 className='font-inter font-medium text-[18px] text-[#444444] text-center mt-5'>Or Sign In with</h1>
-                            <div>
-
-                            </div>
-                            <p className='text-center'>Have an account? Sign In</p>
+                        <h1 className='font-inter font-medium text-[18px] text-[#444444] text-center mt-10'>Or Sign In with</h1>
+                        <div className='flex mx-auto w-[197px] h-[55px] gap-5 mt-10'>
+                            <FaFacebook className='w-[55px] h-[55px] text-blue-600 bg-[#F5F5F8] rounded-full'></FaFacebook>
+                            <FaLinkedin className='w-[55px] h-[55px] text-blue-600 bg-[#F5F5F8] '></FaLinkedin>
+                            <FcGoogle className='w-[55px] h-[55px] text-blue-600 bg-[#F5F5F8]'></FcGoogle>
+                        </div>
+                        <p className='text-center mt-10 font-inter text-[18px] text-[#737373]'>Don't have an account? <Link to="/signup"><span className='text-[#FF3811] font-semibold font-inter'>Sign Up</span></Link></p>
                     </form>
                 </div>
             </div>
