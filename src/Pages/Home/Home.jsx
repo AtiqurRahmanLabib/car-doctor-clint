@@ -6,7 +6,6 @@ import Services from '../../Components/Services/Services';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
 
-
 const Home = () => {
     const [services, setServices] = useState([]);
 
@@ -17,82 +16,88 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Navbar></Navbar>
-            {/* Banner Section  starting point */}
-
-            <section className="banner">
-                <div className="container w-[1140px] h-[600px]  mx-auto mt-10">
+            
+            {/* Banner Section */}
+            <section className="banner px-4 md:px-6">
+                <div className="container max-w-6xl mx-auto py-10">
                     <Banner></Banner>
                 </div>
             </section>
 
-            {/* Banner section end point */}
+            {/* About us section */}
+            <section className="about px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12'>
+                    <div className='relative w-full lg:w-1/2'>
+                        <img className='w-full max-w-md rounded-lg' src={Person} alt="Mechanic working" />
+                        <img className='w-2/3 max-w-xs rounded-lg absolute -right-4 -bottom-4 md:-right-8 md:-bottom-8 border-4 md:border-8 border-white' src={parts} alt="Car parts" />
+                    </div>
 
-            {/*About us section starting point */}
-
-            <div className='w-[1140px] h-[557px] mt-25 mx-auto flex justify-between mb-2'>
-                <div className='w-[521px] h-[557px]'>
-                    <img className='w-[460px]  h-[473px] rounded-[10px]' src={Person} alt="" />
-                    <img className='w-[327px]  h-[332px] rounded-[10px] absolute right-1/2 top-4/3 mt-9 mr-12 border-white border-8 ' src={parts} alt="" />
+                    <div className='w-full lg:w-1/2 space-y-4'>
+                        <h1 className='text-orange-600 text-lg md:text-xl font-bold'>About Us</h1>
+                        <h2 className='text-gray-900 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight'>
+                            We are qualified <br /> & of experience <br /> in this field
+                        </h2>
+                        <p className='text-gray-800'>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
+                        <p className='text-gray-500'>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
+                        <button className='px-6 py-3 bg-orange-600 rounded-md text-lg font-semibold text-white mt-4 hover:bg-orange-700 transition-colors'>
+                            Get More Info
+                        </button>
+                    </div>
                 </div>
+            </section>
 
-                <div className='w-[489px]'>
-                    <h1 className='text-[#FF3811] text-[20px] font-bold font-inter'>About Us</h1>
-                    <h2 className='text-[#151515] font-bold text-[45px] font-inter'>We are qualified <br /> & of experience <br /> in this field</h2>
-                    <p className='font-inter text-[16px] text-[#250f0f] mt-2'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-
-                    <p className='font-inter text-[16px] text-[#737373] mt-5'>
-                        There are many variations of passages of Lorem Ipsum available, but
-                        <br />
-                        the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+            {/* Services section */}
+            <section className="services px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto text-center mb-12'>
+                    <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Service</h1>
+                    <h2 className='text-3xl md:text-4xl font-bold text-gray-900'>Our Service Area</h2>
+                    <p className='text-gray-500 mt-2 max-w-2xl mx-auto'>
+                        The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
                     </p>
-                    <button className='w-[170px] h-[56px] bg-[#FF3811] rounded-[5px] text-[18px] font-inter font-semibold text-white mt-5'>Get More Info</button>
                 </div>
 
-            </div>
-
-            {/*About us section ending point */}
-
-            <div className='mx-auto w-[376px] h-[98px] mb-2 mt-20 text-center' >
-                <h1 className='text-[#FF3811] text-[20px] font-bold font-inter'>Service</h1>
-                <h2 className='text-[45px] font-bold font-inter text-[#151515]'>Our Service Area</h2>
-            </div>
-            <p className='text-[16px] font-inter text-[#737373] text-center'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
-
-
-
-            <div className='grid grid-cols-3 w-[1140px] mx-auto gap-5 mt-5' >
-                {
-                    services.map(service => (
-                        <Services
-                            key={service._id}
-                            service={service}
-                        />
-                    ))
-                }
-            </div>
-
-
-            <div className='w-[1140px] h-[98px] mx-auto mt-10 text-center'>
-            <button className='rounded-[5px] w-[170px] h-[56px] border border-[#FF3811] text-[#FF3811] font-semibold font-inter text-[18px]'>More Services</button>
-            </div>
-                <div className='w-[1140px] h-[250px] mx-auto mt-10 bg-[#151515] rounded-[10px] mb-10'>
-
+                <div className='container max-w-6xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                        {services.map(service => (
+                            <Services
+                                key={service._id}
+                                service={service}
+                            />
+                        ))}
+                    </div>
                 </div>
 
-                <div className='mx-auto text-center'>
-                    <h1 className='font-inter font-bold text-[20px] text-[#FF3811]'>Popular Products</h1>
-                    <p className='text-[#151515] text-[45px] font-bold font-inter'>Browse Our Products</p>
-                    <p className='font-inter text-[16px] text-[#737373] mt-2'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
+                <div className='container max-w-6xl mx-auto text-center mt-12'>
+                    <button className='px-6 py-3 border border-orange-600 rounded-md text-lg font-semibold text-orange-600 hover:bg-orange-600 hover:text-white transition-colors'>
+                        More Services
+                    </button>
                 </div>
+            </section>
 
+            {/* CTA Section */}
+            <section className="cta px-4 md:px-6 py-12">
+                <div className='container max-w-6xl mx-auto bg-gray-900 rounded-lg h-48 md:h-64'></div>
+            </section>
 
+            {/* Products Section */}
+            <section className="products px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto text-center'>
+                    <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Popular Products</h1>
+                    <h2 className='text-gray-900 text-3xl md:text-4xl font-bold'>Browse Our Products</h2>
+                    <p className='text-gray-500 mt-2 max-w-2xl mx-auto'>
+                        The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                    </p>
+                </div>
+            </section>
 
-
-                <Footer></Footer>
+            <Footer></Footer>
         </div>
-
     );
 };
 

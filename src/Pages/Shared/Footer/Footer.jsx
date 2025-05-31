@@ -2,57 +2,63 @@ import React from 'react';
 import logo from '../../../assets/logo.svg';
 import { FaGoogle, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaInstagram } from 'react-icons/fa6';
+
 const Footer = () => {
     return (
-        <div>
-            <div className='bg-[#151515] w-full  h-[477px] justify-center items-center flex gap-50'>
-
-                <div className='w-[283px] h-[216.71px] '>
-                    <img className='w-[79px] h-[64.09px]' src={logo} alt="" />
-                    <p className='font-inter text-[16px] text-[#E8E8E8]'>Edwin Diaz is a software and web <br /> technologies engineer, a life coach <br /> trainer who is also a serial .</p>
-                    <div className='flex gap-5 mt-5'>
-                        <FaGoogle className='w-[36.36px] h-[34.63px] text-white'></FaGoogle>
-                        <FaTwitter className='w-[36.36px] h-[34.63px] text-white'></FaTwitter>
-                        <FaInstagram className='w-[36.36px] h-[34.63px] text-white'></FaInstagram>
-                        <FaLinkedin className='w-[36.36px] h-[34.63px] text-white'></FaLinkedin>
+        <footer className="bg-[#151515] w-full">
+            {/* Main Footer Content */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                {/* Logo and Social Media */}
+                <div className='max-w-[283px]'>
+                    <img className='w-[79px] h-[64px]' src={logo} alt="Company Logo" />
+                    <p className='font-inter text-base text-[#E8E8E8] mt-4'>
+                        Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial.
+                    </p>
+                    <div className='flex gap-4 mt-5'>
+                        <FaGoogle className='w-9 h-8 text-white hover:text-[#FF3811] transition-colors cursor-pointer' />
+                        <FaTwitter className='w-9 h-8 text-white hover:text-[#FF3811] transition-colors cursor-pointer' />
+                        <FaInstagram className='w-9 h-8 text-white hover:text-[#FF3811] transition-colors cursor-pointer' />
+                        <FaLinkedin className='w-9 h-8 text-white hover:text-[#FF3811] transition-colors cursor-pointer' />
                     </div>
-
                 </div>
-                {/* <div className='flex gap-20'> */}
+
+                {/* About Links */}
                 <div>
-                    <h1 className='text-[20px] font-semibold text-[#FFFFFF]'>About</h1>
-                    <ul className='text-[#F3F3F3] text-[16px] font-inter mt-5'>
-                        <li className='mb-2'>Home</li>
-                        <li className='mb-2'>Services</li>
-                        <li>Contact</li>
+                    <h1 className='text-xl font-semibold text-white'>About</h1>
+                    <ul className='text-[#F3F3F3] text-base font-inter mt-5 space-y-2'>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Home</li>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Services</li>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Contact</li>
                     </ul>
                 </div>
 
-
+                {/* Company Links */}
                 <div>
-                    <h1 className='text-[20px] font-semibold text-[#FFFFFF]'>Company</h1>
-                    <ul className='text-[#F3F3F3] text-[16px] font-inter mt-5'>
-                        <li className='mb-2'>Why Car Doctor</li>
-                        <li className='mb-2'>About</li>
-
+                    <h1 className='text-xl font-semibold text-white'>Company</h1>
+                    <ul className='text-[#F3F3F3] text-base font-inter mt-5 space-y-2'>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Why Car Doctor</li>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>About</li>
                     </ul>
                 </div>
 
+                {/* Support Links */}
                 <div>
-                    <h1 className='text-[20px] font-semibold text-[#FFFFFF]'>Support</h1>
-                    <ul className='text-[#F3F3F3] text-[16px] font-inter mt-5'>
-                        <li className='mb-2'>Support Center</li>
-                        <li className='mb-2'>Feedback</li>
-                        <li>Accesbility</li>
+                    <h1 className='text-xl font-semibold text-white'>Support</h1>
+                    <ul className='text-[#F3F3F3] text-base font-inter mt-5 space-y-2'>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Support Center</li>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Feedback</li>
+                        <li className='hover:text-[#FF3811] transition-colors cursor-pointer'>Accesibility</li>
                     </ul>
                 </div>
-
-
             </div>
 
-
-        </div>
-        // </div>
+            {/* Copyright Section */}
+            <div className="border-t border-[#2D2D2D] py-6">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#E8E8E8] text-sm">
+                    <p>© {new Date().getFullYear()} Car Doctor. All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
     );
 };
 
