@@ -96,8 +96,8 @@ const Home = () => {
                     </p>
                 </div>
 
-                <div className='container max-w-6xl mx-auto'>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                <div className='container  max-w-6xl mx-auto '>
+                    <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         {services.map(service => (
                             <Services
                                 key={service._id}
@@ -161,99 +161,119 @@ const Home = () => {
                 </button>
             </div>
 
-            <div className='w-[717px] h-[178px] mx-auto text-center '>
-                <h1 className='font-inter font-bold text-[20px] text-[#FF3811]'>Team</h1>
-                <h2 className='text-[#151515] font-bold text-[45px] font-inter'>Meet Our Team</h2>
-                <p className='font-inter text-[16px] text-[#737373]'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
-            </div>
-            <div className='flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8 mx-auto w-[1170px] mt-10 mb-20'>
-                <div className='w-[364px] h-[487px] rounded-[10px] border border-[#E8E8E8]'>
-                    <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
-                        <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember1} alt="" />
-                    </div>
-                    <div className='p-4 text-center'>
-                        <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
-                        <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
-                    </div>
+            <section className="px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto text-center'>
+                    <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Team</h1>
+                    <h2 className='text-gray-900 text-3xl md:text-4xl font-bold'>Meet Our Team</h2>
+                    <p className='text-gray-500 mt-2 max-w-2xl mx-auto'>
+                        The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                    </p>
                 </div>
-                <div className='w-[364px] h-[487px] rounded-[10px] border border-[#E8E8E8]'>
-                    <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
-                        <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember2} alt="" />
+            </section>
+            <div className='container max-w-6xl mx-auto'>
+                {/* <div className='grid grid-col border sm:mx-auto  lg:flex-row justify-between items-center md:flex  gap-6 lg:gap-8 mx-auto w-[1170px] mt-10 mb-20'> */}
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                    <div className='w-[364px] h-[487px] rounded-[10px] mx-auto border border-[#E8E8E8] '>
+                        <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
+                            <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember1} alt="" />
+                        </div>
+                        <div className='p-4 text-center'>
+                            <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
+                            <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
+                        </div>
                     </div>
-                    <div className='p-4 text-center'>
-                        <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
-                        <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
+                    <div className='w-[364px] h-[487px] rounded-[10px] border mx-auto border-[#E8E8E8]'>
+                        <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
+                            <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember2} alt="" />
+                        </div>
+                        <div className='p-4 text-center'>
+                            <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
+                            <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
+                        </div>
                     </div>
-                </div>
-                <div className='w-[364px] h-[487px] rounded-[10px] border border-[#E8E8E8]'>
-                    <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
-                        <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember3} alt="" />
+                    <div className='w-[364px] h-[487px] rounded-[10px] border mx-auto border-[#E8E8E8]'>
+                        <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
+                            <img className='w-[314px] h-[293px] rounded-[10px]' src={teamMember3} alt="" />
+                        </div>
+                        <div className='p-4 text-center'>
+                            <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
+                            <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
+                        </div>
                     </div>
-                    <div className='p-4 text-center'>
-                        <h1 className='font-bold text-[25px] font-inter text-[#444444]'>Car Engine Plug</h1>
-                        <p className='text-[#737373] font-semibold text-[20px]'>Engine Expert</p>
-                    </div>
-                </div>
-            </div>
-            <div className='w-[717px] h-[178px] mx-auto text-center '>
-                <h1 className='font-inter font-bold text-[20px] text-[#FF3811]'>Core Features</h1>
-                <h2 className='text-[#151515] font-bold text-[45px] font-inter'>Why Choose Us</h2>
-                <p className='font-inter text-[16px] text-[#737373]'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
-            </div>
-            <div className='flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8 mx-auto w-[1170px] mt-10 mb-20'>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] mt-10 hover:text-white content-center' >
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon4} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] '>Expert Team</h1>
-                </div>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] bg-[#FF3811] mt-10 hover:text-white content-center'>
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon1} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] '>Timely Delivery</h1>
-                </div>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] mt-10 hover:text-white content-center'>
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon5} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] '>24/7 Support</h1>
-                </div>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] mt-10 hover:text-white content-center'>
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon6} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] '>Best Equipment</h1>
-                </div>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] mt-10 hover:text-white content-center'>
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon2} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] '>100% Guranty</h1>
-                </div>
-
-                <div className='w-[170px] h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] mt-10 hover:text-white content-center'>
-                    <div className='mt-5 w-[50px] mx-auto'>
-                        <img className='w-[50px] h-[50px]' src={icon3} alt="" />
-                    </div>
-                    <h1 className='font-inter font-bold text-center pt-5 text-[18px] text-[#444444] hover:text-white '>Timely Delivery</h1>
-
                 </div>
             </div>
+            <section className="px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto text-center'>
+                    <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Core Features</h1>
+                    <h2 className='text-gray-900 text-3xl md:text-4xl font-bold'>Why Chose Us</h2>
+                    <p className='text-gray-500 mt-2 max-w-2xl mx-auto'>
+                        The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                    </p>
+                </div>
+            </section>
+           <div className='w-full max-w-[1170px] mx-auto mt-10 mb-20'>
+  <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 px-4'>
+    {/* Expert Team */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon4} alt="Expert Team" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Expert Team</h1>
+    </div>
 
-            <div className='w-[717px] h-[178px] mx-auto text-center '>
-                <h1 className='font-inter font-bold text-[20px] text-[#FF3811]'>Testimonial</h1>
-                <h2 className='text-[#151515] font-bold text-[45px] font-inter'>What Customer Says</h2>
-                <p className='font-inter text-[16px] text-[#737373]'>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
-            </div>
+    {/* Timely Delivery */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon1} alt="Timely Delivery" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-white'>Timely Delivery</h1>
+    </div>
+
+    {/* 24/7 Support */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon5} alt="24/7 Support" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>24/7 Support</h1>
+    </div>
+
+    {/* Best Equipment */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon6} alt="Best Equipment" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Best Equipment</h1>
+    </div>
+
+    {/* 100% Guranty */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon2} alt="100% Guaranty" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>100% Guranty</h1>
+    </div>
+
+    {/* Timely Delivery (duplicate?) */}
+    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+      <div className='w-[50px] h-[50px]'>
+        <img className='w-full h-full' src={icon3} alt="Timely Delivery" />
+      </div>
+      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Timely Delivery</h1>
+    </div>
+  </div>
+</div>
+            <section className="px-4 md:px-6 py-12 md:py-20">
+                <div className='container max-w-6xl mx-auto text-center'>
+                    <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Testimonial</h1>
+                    <h2 className='text-gray-900 text-3xl md:text-4xl font-bold'>What Customer Says</h2>
+                    <p className='text-gray-500 mt-2 max-w-2xl mx-auto'>
+                        The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                    </p>
+                </div>
+            </section>
             <section>
                 <div className='container max-w-6xl mx-auto'>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 '>
                         {description.slice(0, visibleReviews).map(sReview => (
                             <CustomerReview
                                 key={sReview._id}

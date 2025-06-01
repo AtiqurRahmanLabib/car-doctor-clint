@@ -5,7 +5,7 @@ const CustomerReview = ({ description }) => {
     console.log(description);
     return (
         <div>
-      <div className='w-[558px] h-[349px] border shadow-2xl border-[#F3F3F3] rounded-[10px]'>
+      <div className='mx-auto w-[558px] h-[349px] border shadow-2xl border-[#F3F3F3] rounded-[10px] '>
         <div className='flex mt-5 gap-5 p-5'>
           <div>
             <img className='w-[60px] h-[60px] rounded-full' src={image} alt="" />

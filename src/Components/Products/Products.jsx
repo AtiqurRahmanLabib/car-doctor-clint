@@ -1,7 +1,7 @@
 const Products = ({product}) => {
     const { image, name, price } = product;
     return (
-           <div className='w-[364px] h-[389px] shadow-xl p-4 bg-[#FFFFFF] rounded-[10px]'>
+           <div className='w-[364px] mx-auto h-[389px] shadow-xl p-4 bg-[#FFFFFF] rounded-[10px]'>
             <div className='rounded-2xl w-[314px] h-[208.01px] mx-auto'>
                 <img className='w-[326px] h-[215px]  rounded-[10px] bg-[#F3F3F3]'
                     src={image} 
