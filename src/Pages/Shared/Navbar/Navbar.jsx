@@ -13,12 +13,12 @@ const Navbar = () => {
     };
 
     return (
-        <header className="bg-white shadow-sm">
+        <header className="">
             {/* Main Navbar Container - Fixed width on large screens */}
-            <div className="mx-auto px-4 sm:px-6 h-[86.78px] max-w-[1140px] flex items-center justify-between">
+            <div className="mx-auto px-4 sm:px-6 h-[86.78px] max-w-[1190px] flex items-center justify-between mt-5">
                 {/* Logo */}
                 <div className="flex-shrink-0">
-                    <img src={logo} alt="Company Logo" className="h-10 md:h-12" />
+                    <img src={logo} alt="Company Logo" className="lg:w-[107px] lg:h-[86px] md:h-12" />
                 </div>
 
                 {/* Desktop Navigation - Shows on md screens and up */}

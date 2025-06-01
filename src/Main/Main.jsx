@@ -6,9 +6,7 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 const Main = () => {
     return (
         <div>
-            
             <Outlet></Outlet>
-        
         </div>
     );
 };
