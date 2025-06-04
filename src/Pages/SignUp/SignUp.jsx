@@ -18,7 +18,7 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
         createUser(email, password)
             .then(result => {
                 setSuccess('User created successfully');
@@ -38,10 +38,10 @@ const SignUp = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16">
                     {/* Signup Image - Hidden on mobile */}
                     <div className="hidden lg:block flex-1 max-w-md xl:max-w-lg">
-                        <img 
-                            className="w-full h-auto" 
-                            src={loginImg} 
-                            alt="Signup illustration" 
+                        <img
+                            className="w-full h-auto"
+                            src={loginImg}
+                            alt="Signup illustration"
                         />
                     </div>
 

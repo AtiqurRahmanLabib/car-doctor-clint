@@ -5,7 +5,8 @@ import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth/web-extension';
+import { GoogleAuthProvider } from 'firebase/auth';
+
 
 const Login = () => {
     const { loginUser, googleLogin } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        
+
         loginUser(email, password)
             .then(result => {
                 setSuccess('Login successfully');
@@ -59,28 +60,28 @@ const Login = () => {
                             <div className='space-y-4'>
                                 <div>
                                     <label className='block text-[#444444] text-lg font-semibold mb-2'>Email</label>
-                                    <input 
-                                        type="email" 
-                                        name='email' 
-                                        className='w-full h-12 md:h-14 rounded-lg border border-[#E8E8E8] px-4' 
-                                        placeholder='Your email' 
-                                        required 
-                                    />
-                                </div>
-                                
-                                <div>
-                                    <label className='block text-[#444444] text-lg font-semibold mb-2'>Password</label>
-                                    <input 
-                                        type="password" 
-                                        name='password' 
-                                        className='w-full h-12 md:h-14 rounded-lg border border-[#E8E8E8] px-4' 
-                                        placeholder='Your password' 
-                                        required 
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        className='w-full h-12 md:h-14 rounded-lg border border-[#E8E8E8] px-4'
+                                        placeholder='Your email'
+                                        required
                                     />
                                 </div>
 
-                                <button 
-                                    className='w-full h-14 md:h-16 bg-[#FF3811] rounded-lg text-lg md:text-xl font-semibold text-white mt-6 hover:bg-[#e0310f] transition-colors' 
+                                <div>
+                                    <label className='block text-[#444444] text-lg font-semibold mb-2'>Password</label>
+                                    <input
+                                        type="password"
+                                        name='password'
+                                        className='w-full h-12 md:h-14 rounded-lg border border-[#E8E8E8] px-4'
+                                        placeholder='Your password'
+                                        required
+                                    />
+                                </div>
+
+                                <button
+                                    className='w-full h-14 md:h-16 bg-[#FF3811] rounded-lg text-lg md:text-xl font-semibold text-white mt-6 hover:bg-[#e0310f] transition-colors'
                                     type="submit"
                                 >
                                     Sign In
@@ -93,20 +94,20 @@ const Login = () => {
                             <div className='mt-8 md:mt-12 text-center'>
                                 <p className='text-[#444444] mb-6'>Or Sign In with</p>
                                 <div className='flex justify-center gap-4'>
-                                    <button 
-                                        type="button" 
+                                    <button
+                                        type="button"
                                         className='w-12 h-12 md:w-14 md:h-14 bg-[#F5F5F8] rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors'
                                     >
                                         <FaFacebook className='text-blue-600 text-2xl' />
                                     </button>
-                                    <button 
-                                        type="button" 
+                                    <button
+                                        type="button"
                                         className='w-12 h-12 md:w-14 md:h-14 bg-[#F5F5F8] rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors'
                                     >
                                         <FaLinkedin className='text-blue-600 text-2xl' />
                                     </button>
-                                    <button 
-                                        type="button" 
+                                    <button
+                                        type="button"
                                         onClick={handleGoogleLogin}
                                         className='w-12 h-12 md:w-14 md:h-14 bg-[#F5F5F8] rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors'
                                     >

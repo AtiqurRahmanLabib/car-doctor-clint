@@ -16,6 +16,9 @@ import icon4 from '../../assets/icons/group.svg';
 import icon5 from '../../assets/icons/person.svg';
 import icon6 from '../../assets/icons/Wrench.svg';
 import CustomerReview from '../../Components/CustomerReview/CustomerReview';
+import grpIcons1 from '../../assets/grp-icons/Group 32.png';
+import grpIcons2 from '../../assets/grp-icons/Group.png';
+import grpIcons3 from '../../assets/grp-icons/Group 35.png';
 
 
 const Home = () => {
@@ -47,8 +50,6 @@ const Home = () => {
     }, [])
 
 
-
-
     return (
         <div className="overflow-x-hidden">
             <Navbar></Navbar>
@@ -63,9 +64,9 @@ const Home = () => {
             {/* About us section */}
             <section className="about px-4 md:px-6 py-12 md:py-20">
                 <div className='container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12'>
-                    <div className='relative w-full lg:w-1/2'>
+                    <div className='relative mt-9 w-full lg:w-1/2'>
                         <img className='w-full max-w-md rounded-lg' src={Person} alt="Mechanic working" />
-                        <img className='w-2/3 max-w-xs rounded-lg absolute -right-4 -bottom-4 md:-right-8 md:-bottom-8 border-4 md:border-8 border-white' src={parts} alt="Car parts" />
+                        <img className='w-2/3 max-w-xs rounded-lg absolute -right-4 -bottom-7 md:-right-8 md:-bottom-[80px] border-4 md:border-8 border-white' src={parts} alt="Car parts" />
                     </div>
 
                     <div className='w-full lg:w-1/2 space-y-4'>
@@ -116,18 +117,33 @@ const Home = () => {
 
             {/* CTA Section */}
             <section className="cta px-4 md:px-6 py-12">
-                <div className='flex items-center justify-evenly container max-w-6xl mx-auto bg-gray-900 rounded-lg h-48 md:h-64'>
-                    <div>
-                        <h1 className='font-inter font-medium text-[16px] text-white'>We are open monday-friday</h1>
-                        <p className='font-inter font-bold text-[25px] text-white'>7:00 am - 9:00 pm</p>
+                <div className='flex flex-col md:flex-row items-center justify-evenly container max-w-6xl mx-auto bg-gray-900 rounded-lg py-8 md:py-0 md:h-48 lg:h-64 gap-6 md:gap-0'>
+                    <div className='flex gap-2 items-center text-center w-full md:w-auto px-4 md:px-0'>
+                        <div>
+                            <img src={grpIcons1} alt="" className="w-8 h-8 md:w-10 md:h-10" />
+                        </div>
+                        <div className='grid'>
+                            <h1 className='font-inter font-medium text-sm md:text-[16px] text-white'>We are open monday-friday</h1>
+                            <p className='font-inter font-bold text-lg md:text-xl lg:text-[25px] text-white'>7:00 am - 9:00 pm</p>
+                        </div>
                     </div>
-                    <div>
-                        <h1 className='font-inter font-medium text-[16px] text-white'>Have a qeastion?</h1>
-                        <p className='font-inter font-bold text-[25px] text-white'>+2546 251 2658</p>
+                    <div className='flex gap-2 items-center text-center w-full md:w-auto px-4 md:px-0'>
+                        <div>
+                            <img src={grpIcons2} alt="" className="w-8 h-8 md:w-10 md:h-10" />
+                        </div>
+                        <div className='grid'>
+                            <h1 className='font-inter font-medium text-sm md:text-[16px] text-white'>Have a question?</h1>
+                            <p className='font-inter font-bold text-lg md:text-xl lg:text-[25px] text-white'>+2546 251 2658</p>
+                        </div>
                     </div>
-                    <div>
-                        <h1 className='font-inter font-medium text-[16px] text-white'>Need a repair? our address</h1>
-                        <p className='font-inter font-bold text-[25px] text-white'>Liza Street, New York</p>
+                    <div className='flex gap-2 items-center text-center w-full md:w-auto px-4 md:px-0'>
+                        <div>
+                            <img src={grpIcons3} alt="" className="w-8 h-8 md:w-10 md:h-10" />
+                        </div>
+                        <div className='grid'>
+                            <h1 className='font-inter font-medium text-sm md:text-[16px] text-white'>Need a repair? our address</h1>
+                            <p className='font-inter font-bold text-lg md:text-xl lg:text-[25px] text-white'>Liza Street, New York</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -143,7 +159,6 @@ const Home = () => {
                 </div>
             </section>
             <section>
-
                 <div className='container max-w-6xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         {products.map(product => (
@@ -155,6 +170,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+
             <div className='container max-w-6xl mx-auto text-center mt-12 mb-20'>
                 <button className='px-6 py-3 border border-orange-600 rounded-md text-lg font-semibold text-orange-600 hover:bg-orange-600 hover:text-white transition-colors'>
                     More Products
@@ -170,8 +187,9 @@ const Home = () => {
                     </p>
                 </div>
             </section>
+
+
             <div className='container max-w-6xl mx-auto'>
-                {/* <div className='grid grid-col border sm:mx-auto  lg:flex-row justify-between items-center md:flex  gap-6 lg:gap-8 mx-auto w-[1170px] mt-10 mb-20'> */}
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     <div className='w-[364px] h-[487px] rounded-[10px] mx-auto border border-[#E8E8E8] '>
                         <div className='w-[314px] h-[293px] rounded-[10px] mx-auto mt-4'>
@@ -211,57 +229,57 @@ const Home = () => {
                     </p>
                 </div>
             </section>
-           <div className='w-full max-w-[1170px] mx-auto mt-10 mb-20'>
-  <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 px-4'>
-    {/* Expert Team */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon4} alt="Expert Team" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Expert Team</h1>
-    </div>
+            <div className='w-full max-w-[1170px] mx-auto mt-10 mb-20'>
+                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 px-4'>
+                    {/* Expert Team */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon4} alt="Expert Team" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Expert Team</h1>
+                    </div>
 
-    {/* Timely Delivery */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon1} alt="Timely Delivery" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-white'>Timely Delivery</h1>
-    </div>
+                    {/* Timely Delivery */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon1} alt="Timely Delivery" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-white'>Timely Delivery</h1>
+                    </div>
 
-    {/* 24/7 Support */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon5} alt="24/7 Support" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>24/7 Support</h1>
-    </div>
+                    {/* 24/7 Support */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon5} alt="24/7 Support" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>24/7 Support</h1>
+                    </div>
 
-    {/* Best Equipment */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon6} alt="Best Equipment" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Best Equipment</h1>
-    </div>
+                    {/* Best Equipment */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon6} alt="Best Equipment" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Best Equipment</h1>
+                    </div>
 
-    {/* 100% Guranty */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon2} alt="100% Guaranty" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>100% Guranty</h1>
-    </div>
+                    {/* 100% Guranty */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon2} alt="100% Guaranty" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>100% Guranty</h1>
+                    </div>
 
-    {/* Timely Delivery (duplicate?) */}
-    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
-      <div className='w-[50px] h-[50px]'>
-        <img className='w-full h-full' src={icon3} alt="Timely Delivery" />
-      </div>
-      <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Timely Delivery</h1>
-    </div>
-  </div>
-</div>
+                    {/* Timely Delivery (duplicate?) */}
+                    <div className='w-full h-[156px] rounded-[10px] border border-[#E8E8E8] hover:bg-[#FF3811] hover:text-white flex flex-col items-center justify-center transition-colors duration-300'>
+                        <div className='w-[50px] h-[50px]'>
+                            <img className='w-full h-full' src={icon3} alt="Timely Delivery" />
+                        </div>
+                        <h1 className='font-inter font-bold text-center pt-3 text-[16px] sm:text-[18px] text-[#444444] hover:text-white'>Timely Delivery</h1>
+                    </div>
+                </div>
+            </div>
             <section className="px-4 md:px-6 py-12 md:py-20">
                 <div className='container max-w-6xl mx-auto text-center'>
                     <h1 className='text-orange-600 text-lg md:text-xl font-bold'>Testimonial</h1>
