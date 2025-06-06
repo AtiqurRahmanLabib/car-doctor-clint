@@ -14,11 +14,12 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    // Handle logout
     const handleLogOut = () => {
         logOut()
             .then(() => { })
-            .catch(error => console.log(error));
-    };
+            .catch(error => console.log(error))
+    }
 
     return (
         <header className="">
@@ -29,7 +30,7 @@ const Navbar = () => {
                     <div className="flex-shrink-0">
                         <NavLink to="/home">
                             <img src={logo} alt="Company Logo" className="lg:w-[107px] lg:h-[86px] md:h-12" />
-                            </NavLink>
+                        </NavLink>
                     </div>
                 </div>
                 {/* <div className={`class-no-user flex items-center  w-[840px] justify-between $ */}

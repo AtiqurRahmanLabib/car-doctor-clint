@@ -6,11 +6,11 @@ import { IoCloseCircle } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoReturnUpBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
+import { confirmDelete, successAlert } from "../../Components/CustomAlert/CustomAlert";
 const CardDetails = () => {
     const [orders, setOrders] = useState([]);
     const url = 'http://localhost:5000/orders';
-    
+
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
@@ -19,6 +19,27 @@ const CardDetails = () => {
                 console.log(data);
             })
     }, [])
+
+   const handleDelete = async (id) => {
+        const result = await confirmDelete();
+        
+        if (result.isConfirmed) {
+            try {
+                const response = await fetch(`http://localhost:5000/orders/${id}`, {
+                    method: 'DELETE', 
+                });
+                const data = await response.json();
+                
+                if (data.deletedCount > 0) {
+                    setOrders(orders.filter(order => order._id !== id));
+                    await successAlert("Order deleted successfully!");
+                }
+            } catch (error) {
+                console.error("Delete error:", error);
+            }
+        }
+    }
+
 
     return (
         <div>
@@ -43,17 +64,27 @@ const CardDetails = () => {
                 <table className="w-full">
                     <tbody>
                         {orders.map((order) => (
-                            <tr key={order.id} className="hover:bg-white mb-2 w-full min-h-[150px] flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200">
-                                <div className="flex items-center gap-4 w-full sm:w-auto mb-4 sm:mb-0">
-                                    <IoCloseCircle className="text-[#444444] w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]" />
-                                    <td><img className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] rounded-[10px]" src={order.serviceImgUrl} alt="" /></td>
-                                </div>
-                                <td className="text-[16px] sm:text-[20px] font-semibold text-[#444444] font-inter w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">{order.serviceName}</td>
-                                <td className="text-[16px] sm:text-[20px] font-semibold font-inter text-[#444444] w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">{order.servicePrice}</td>
-                                <td className="font-medium text-[16px] sm:text-[20px] text-[#2D2D2D] w-full sm:w-auto text-center sm:text-left mb-4 sm:mb-0">{order.order_date}</td>
-                                <button className="w-full sm:w-[120px] h-[40px] sm:h-[48px] bg-[#FF3811] rounded-[20px] text-white font-semibold text-[16px] sm:text-[20px]">
-                                    Pending
-                                </button>
+                            <tr key={order._id} className="hover:bg-white mb-2 w-full min-h-[150px] flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200">
+                                <td className="flex items-center gap-4 w-full sm:w-auto mb-4 sm:mb-0">
+                                    <button onClick={() => handleDelete(order._id)}>
+                                        <IoCloseCircle className="text-[#444444] w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]" />
+                                    </button>
+                                    <img className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] rounded-[10px]" src={order.serviceImgUrl} alt="" />
+                                </td>
+                                <td className="text-[16px] sm:text-[20px] font-semibold text-[#444444] font-inter w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">
+                                    {order.serviceName}
+                                </td>
+                                <td className="text-[16px] sm:text-[20px] font-semibold font-inter text-[#444444] w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">
+                                    {order.servicePrice}
+                                </td>
+                                <td className="font-medium text-[16px] sm:text-[20px] text-[#2D2D2D] w-full sm:w-auto text-center sm:text-left mb-4 sm:mb-0">
+                                    {order.order_date}
+                                </td>
+                                <td className="w-full sm:w-auto text-center sm:text-left">
+                                    <button className="w-full sm:w-[120px] h-[40px] sm:h-[48px] bg-[#FF3811] rounded-[20px] text-white font-semibold text-[16px] sm:text-[20px]">
+                                        Pending
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
