@@ -27,7 +27,9 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className=''>
                     <div className="flex-shrink-0">
-                        <img src={logo} alt="Company Logo" className="lg:w-[107px] lg:h-[86px] md:h-12" />
+                        <NavLink to="/home">
+                            <img src={logo} alt="Company Logo" className="lg:w-[107px] lg:h-[86px] md:h-12" />
+                            </NavLink>
                     </div>
                 </div>
                 {/* <div className={`class-no-user flex items-center  w-[840px] justify-between $ */}

@@ -5,13 +5,13 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { IoCloseCircle } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoReturnUpBack } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const CardDetails = () => {
     const [orders, setOrders] = useState([]);
     const url = 'http://localhost:5000/orders';
+    
     useEffect(() => {
-        // Fetch orders from the server
-        // You can replace this URL with your actual API endpoint
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -20,22 +20,12 @@ const CardDetails = () => {
             })
     }, [])
 
-
-
-
-    const App = () => {
-        return (
-            <div className="p-6">
-                <h1 className="text-2xl font-bold mb-6">My Orders</h1>
-                <OrdersTable orders={orders} />
-            </div>
-        );
-    };
     return (
         <div>
             <Navbar></Navbar>
 
-            <div className="w-full px-4 md:px-0 md:w-[90%] lg:w-[1140px] h-[200px] md:h-[250px] lg:h-[300px] mx-auto mt-5 relative">
+            {/* Hero Section */}
+            <div className="w-full px-4 max-w-[1140px] h-[200px] md:h-[250px] lg:h-[300px] mx-auto mt-5 relative">
                 <p className="absolute z-10 text-white text-2xl md:text-3xl lg:text-[45px] font-bold top-1/4 md:top-1/3 left-4 md:left-8 lg:left-22 font-inter">
                     Card Details
                 </p>
@@ -48,39 +38,40 @@ const CardDetails = () => {
                 </div>
             </div>
 
-            <div className="w-[1140px] mx-auto mt-9">
-                <table>
-                    <tbody className="">
-                        {
-                            orders.map((order) => (
-                                <tr key={order.id} className="hover:bg-white mt-2 w-[1140px] h-[150px] flex items-center justify-between px-4">
-                                    <div className="flex items-center gap-4">
-                                        <IoCloseCircle className="text-[#444444] w-[40px] h-[40px]" />
-                                        <td><img className="w-[150px] h-[150px] rounded-[10px]" src={order.serviceImgUrl} alt="" /></td>
-                                    </div>
-                                    <td className="text-[20px] font-semibold text-[#444444] font-inter">{order.serviceName}</td>
-                                    <td className="text-[20px] font-semibold font-inter text-[#444444]">{order.servicePrice}</td>
-                                    <td className="font-medium text-[20px] text-[#2D2D2D] ">{order.order_date}</td>
-                                    <button className="w-[120px] h-[48px] bg-[#FF3811] rounded-[20px] text-white font-semibold text-[20px] ">Pending</button>
-                                </tr>
-
-                            )
-                            )
-                        }
+            {/* Orders Table */}
+            <div className="w-full px-4 max-w-[1140px] mx-auto mt-9 overflow-x-auto">
+                <table className="w-full">
+                    <tbody>
+                        {orders.map((order) => (
+                            <tr key={order.id} className="hover:bg-white mb-2 w-full min-h-[150px] flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-200">
+                                <div className="flex items-center gap-4 w-full sm:w-auto mb-4 sm:mb-0">
+                                    <IoCloseCircle className="text-[#444444] w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]" />
+                                    <td><img className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] rounded-[10px]" src={order.serviceImgUrl} alt="" /></td>
+                                </div>
+                                <td className="text-[16px] sm:text-[20px] font-semibold text-[#444444] font-inter w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">{order.serviceName}</td>
+                                <td className="text-[16px] sm:text-[20px] font-semibold font-inter text-[#444444] w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">{order.servicePrice}</td>
+                                <td className="font-medium text-[16px] sm:text-[20px] text-[#2D2D2D] w-full sm:w-auto text-center sm:text-left mb-4 sm:mb-0">{order.order_date}</td>
+                                <button className="w-full sm:w-[120px] h-[40px] sm:h-[48px] bg-[#FF3811] rounded-[20px] text-white font-semibold text-[16px] sm:text-[20px]">
+                                    Pending
+                                </button>
+                            </tr>
+                        ))}
                     </tbody>
-
                 </table>
             </div>
 
-            <div className="w-[1140px] mx-auto p-5 flex justify-between items-center mt-10">
-                <button className="flex gap-1 items-center">
-                    <IoReturnUpBack className="w-[18px] h-[16px] text-[#444444]"></IoReturnUpBack>
-                    <h1 className="font-inter text-[20px] text-[#444444]">Continue Shopping</h1>
-                </button>
-                <button className="flex gap-1 items-center">
-                    <RiDeleteBin6Line className="w-[18px] h-[16px] text-[#444444]"/>
+            {/* Action Buttons */}
+            <div className="w-full px-4 max-w-[1140px] mx-auto p-5 flex flex-col sm:flex-row justify-between items-center mt-10 gap-4">
+                <Link to="/home" className="w-full sm:w-auto">
+                    <button className="flex gap-1 items-center justify-center w-full">
+                        <IoReturnUpBack className="w-[18px] h-[16px] text-[#444444]"></IoReturnUpBack>
+                        <h1 className="font-inter text-[16px] sm:text-[20px] text-[#444444]">Continue Shopping</h1>
+                    </button>
+                </Link>
 
-                    <h1 className="font-inter text-[20px] text-[#444444]">Clear Shopping Cart</h1>
+                <button className="flex gap-1 items-center justify-center w-full sm:w-auto">
+                    <RiDeleteBin6Line className="w-[18px] h-[16px] text-[#444444]" />
+                    <h1 className="font-inter text-[16px] sm:text-[20px] text-[#444444]">Clear Shopping Cart</h1>
                 </button>
             </div>
 
